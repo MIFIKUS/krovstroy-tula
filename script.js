@@ -224,7 +224,7 @@ function closeRoofingModal() {
 
 // Form Submission
 async function sendFormData(data) {
-    const url = 'http://localhost:8000/api/send-form';
+    const url = '/api/send-form';
 
     const response = await fetch(url, {
         method: 'POST',
