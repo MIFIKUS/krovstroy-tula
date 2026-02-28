@@ -1,0 +1,125 @@
+/* Additional custom styles beyond Tailwind */
+
+/* Smooth scrolling */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f5f9;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #cbd5e1;
+    border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #94a3b8;
+}
+
+/* Animation for service cards */
+.service-card {
+    animation: fadeIn 0.5s ease-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Hero section responsive adjustments */
+@media (max-width: 768px) {
+    .hero-split {
+        background: linear-gradient(180deg, #1e293b 55%, #92400e 45%) !important;
+    }
+}
+
+/* City tags animation */
+.city-tag {
+    animation: popIn 0.3s ease-out backwards;
+}
+
+@keyframes popIn {
+    from {
+        opacity: 0;
+        transform: scale(0.8);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* Focus states for accessibility */
+button:focus-visible,
+a:focus-visible,
+input:focus-visible {
+    outline: 2px solid #f97316;
+    outline-offset: 2px;
+}
+
+/* Loading state for buttons */
+button:disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
+}
+
+/* Image hover effects */
+img {
+    transition: transform 0.3s ease;
+}
+
+.group:hover img {
+    transform: scale(1.05);
+}
+
+/* Glass morphism enhancement */
+.glass-card {
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.15);
+}
+
+/* Text selection color */
+::selection {
+    background-color: #f97316;
+    color: white;
+}
+
+/* Mobile optimizations */
+@media (max-width: 640px) {
+    .container {
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+    
+    h2 {
+        font-size: 1.875rem;
+        line-height: 2.25rem;
+    }
+}
+
+/* Print styles */
+@media print {
+    header,
+    .fixed,
+    button,
+    #modal {
+        display: none !important;
+    }
+    
+    body {
+        background: white;
+        color: black;
+    }
+}
